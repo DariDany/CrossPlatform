@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "FindLength";
+}
+
+<h2>Лабораторна робота 1</h2>
+
+<form method="post" enctype="multipart/form-data" action="@Url.Action("FindLength", "Labs")">
+    <label for="inputFile" class="form-label">Вхідний файл:</label>
+    <input type="file" class="form-control" id="inputFile" name="inputFile" required>
+    <button type="submit">Виконати</button>
+</form>
+
+<label class="form-label">Результат:</label>
+<textarea class="form-control" id="outputContent" rows="4" readonly>@ViewBag.Result</textarea>
