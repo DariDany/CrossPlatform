@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Lab5.styles.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -27,6 +28,9 @@
                         </li>
                         @if (User.Identity.IsAuthenticated){
                             <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("Profile", "Account")" class="btn btn-outline-light btn-sm ms-2">Профіль</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Labs" asp-action="FindLength">Lab1</a>
                             </li>
                             <li class="nav-item">
@@ -36,7 +40,20 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Labs" asp-action="RectangleAreaSolver">Lab3</a>
                             </li>
                         }
-                        
+                        else
+                        {
+                            <!-- Authentication buttons for non-authenticated users -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("Login", "Account")" class="btn btn-outline-light btn-sm me-2">
+                                    Увійти
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("Register", "Account")" class="btn btn-light btn-sm">
+                                    Зареєструватися
+                                </a>
+                            </li>
+                        }
                     </ul>
                     <div class="dropdown">
                         <ul class="navbar-nav flex-grow-1">

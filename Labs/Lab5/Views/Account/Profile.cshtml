@@ -1,0 +1,104 @@
+﻿@model Lab5.Models.ProfileViewModel
+@{
+    ViewData["Title"] = "User Profile";
+}
+
+<style>
+    p{
+        margin: 0;
+    }
+    .container{
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+    }
+    .profile-container {
+        background-color: #F9F9F9;
+    }
+
+    .profile-header {
+        height: 90px;
+        background: linear-gradient(45deg, #E083FF, #ED1CC0);
+    }
+
+    .profile-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        font-family: 'Inter';
+        margin-top: 25px;
+    }
+
+    .profile-info h2{
+        font-size: 24px;
+    }
+
+    .profile-details{
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .profile-img{
+        width: 149px;
+        height: 155px;
+        border-radius: 10px;
+    }
+
+    .user-info{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        font-size: 12px;
+    }
+    
+    .info-item{
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .logout-button{
+        padding: 9px 26px 9px 26px;
+        font-size: 12px;
+        background: linear-gradient(45deg, #E083FF, #ED1CC0);
+        border-radius: 8px;
+        border: 1px solid black;
+    }
+
+    .btn-logout:hover {
+        background-color: #ED1CC0;
+    }
+</style>
+
+<div class="profile-container">
+    <div class="profile-header"></div>
+
+    <div class="profile-info">
+        <h2><b>@Model.FullName 's Profile</b></h2>
+        <div class="profile-details">
+            <img src="~/images/Group 1.png" alt="Profile Image" class="profile-img" />
+            <div class="user-info">
+                <p class="info-item">
+                    <img src="~/img/FullName.svg"> <span><strong>Full Name:</strong> @Model.FullName</span>
+                </p>
+                <p class="info-item">
+                    <img src="~/img/Phone.svg"> <span><strong>Username:</strong> @Model.UserName</span>
+                </p>
+                <p class="info-item">
+                    <img src="~/img/UserName.svg"> <span><strong>Email:</strong> @Model.Email</span>
+                </p>
+                <p class="info-item">
+                    <img src="~/img/Email.svg"><span><strong>Phone:</strong> @Model.Phone</span>
+                </p>
+            </div>
+        </div>
+        <form asp-controller="Account" asp-action="Logout" method="post">
+            <button type="submit" class="logout-button"><b>Log Out</b></button>
+        </form>
+    </div>
+</div>
