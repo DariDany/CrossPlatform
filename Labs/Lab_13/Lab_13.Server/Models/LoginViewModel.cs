@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Lab5.Models
+namespace Lab_13.Server.Models
 {
     public class LoginViewModel
     {
@@ -12,5 +12,6 @@ namespace Lab5.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        //public bool RememberMe { get; set; }
     }
 }

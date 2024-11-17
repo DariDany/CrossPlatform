@@ -11,7 +11,6 @@ namespace Lab5.Controllers
     {
         private readonly Auth0UserService _auth0UserService;
 
-        // Конструктор класса, который принимает Auth0UserService
         public AccountController(Auth0UserService auth0UserService)
         {
             _auth0UserService = auth0UserService;
